@@ -1,0 +1,509 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+}
+
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
+    
+    .video-fondo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    
+    .hero .contenido {
+        position: relative;
+        background: rgba(0, 0, 0, 0.5); /* Oscurece un poco el fondo */
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+    
+    .boton-hero {
+        display: inline-block;
+        padding: 12px 20px;
+        margin-top: 20px;
+        background: #ff0000;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+    
+    .boton-hero:hover {
+        background: #218838;
+    }
+    
+
+header {
+    background: linear-gradient(to right, #000428, #004e92);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Estilos del menú desplegable */
+.submenu {
+    position: relative;
+    display: inline-block;
+}
+
+.submenu-contenido {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #000428;
+    min-width: 150px;
+    z-index: 10;
+    list-style: none;
+    padding: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.submenu-contenido li {
+    display: block;
+}
+
+.submenu-contenido a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+    background: #000428;
+    transition: background 0.3s;
+}
+
+.submenu-contenido a:hover {
+    background: #777;
+}
+
+/* Hace que el menú se despliegue cuando el mouse pase */
+.submenu:hover .submenu-contenido {
+    display: block;
+}
+
+.hero {
+    height: 60vh;
+    background: url('new_background.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.section {
+    padding: 50px 20px;
+}
+
+.section h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #222;
+}
+
+.contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.producto {
+    background: white;
+    width: 280px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.producto h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.producto p {
+    font-size: 18px;
+    color: #555;
+}
+
+.boton-comprar {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background: #ff0000;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.boton-comprar:hover {
+    background: #218838;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.redes a {
+    color: #f39c12;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.redes a:hover {
+    color: #e67e22;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .producto {
+        width: 90%;
+    }
+}
+
+/* ESTILOS PARA COMPRA.HTML */
+
+.compra {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.compra h2 {
+    text-align: center;
+    color: #222;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.compra label {
+    display: block;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.compra input,
+.compra select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.compra button {
+    display: block;
+    width: 100%;
+    background: #ff0000;
+    color: white;
+    padding: 12px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 15px;
+}
+
+.compra button:hover {
+    background: #218838;
+}
+
+
+
+/* Sección de Ofertas */
+#oferta {
+    padding: 50px 20px;
+    background: #ffdddd;
+    text-align: center;
+}
+
+#oferta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #d10000;
+}
+
+#oferta p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+    color: #222;
+}
+
+.sobre-nosotros {
+    padding: 50px 20px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.sobre-nosotros h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.sobre-nosotros p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+    color: #555;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 40px 20px;
+}
+
+.contacto {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contacto h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contacto label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+.contacto input,
+.contacto textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contacto button {
+    display: block;
+    width: 100%;
+    background-color: #d10000;
+    color: white;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contacto button:hover {
+    background-color: #a00000;
+}
+
+.ofertas {
+    padding: 50px 20px;
+    background-color: #fff0f0;
+    text-align: center;
+}
+
+.ofertas h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #d10000;
+}
+
+.ofertas p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.ofertas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.producto {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.producto:hover {
+    transform: scale(1.03);
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.producto h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.precio-original {
+    text-decoration: line-through;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.precio-descuento {
+    color: #d10000;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.producto button {
+    background-color: #d10000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.producto button:hover {
+    background-color: #a00000;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 50px;
+  }
+  
+  footer .redes {
+    margin-top: 10px;
+  }
+  
+  footer .redes a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  footer .redes a:hover {
+    color: #ffdd57;
+  }
+  

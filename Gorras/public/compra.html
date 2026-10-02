@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra | Tienda de Gorras</title>
+    <link rel="stylesheet" href="styless.css">
+    <script>
+        function obtenerParametro(nombre) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nombre);
+        }
+        
+        window.onload = function() {
+            const producto = obtenerParametro("producto");
+            if (producto) {
+                document.getElementById("producto-nombre").textContent = producto;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="estilos.html">Estilos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="compra">
+        <h2>Comprar <span id="producto-nombre"></span></h2>
+        <form action="procesar_compra.php" method="post">
+            <input type="hidden" name="producto" id="producto" value="">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="direccion">Dirección de envío:</label>
+            <input type="text" id="direccion" name="direccion" required>
+            
+            <label for="metodo-pago">Método de pago:</label>
+            <select id="metodo-pago" name="metodo-pago" required>
+                <option value="tarjeta">Tarjeta de crédito/débito</option>
+                <option value="paypal">PayPal</option>
+                <option value="efectivo">Pago contra entrega</option>
+            </select>
+            
+            <button type="submit">Confirmar Compra</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Tienda de Gorras | Todos los derechos reservados</p>
+        <div class="redes">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById("producto").value = obtenerParametro("producto");
+    </script>
+</body>
+
+<footer>
+    <p>&copy; 2025 Tienda de Gorras | Todos los derechos reservados</p>
+    <div class="redes">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+  
+  <!-- Stripe.js desde el CDN oficial -->
+<script src="https://js.stripe.com/v3/"></script>
+
+<button id="checkout-button">Pagar con Stripe</button>
+
+<script>
+  const stripe = Stripe('pk_test_XXXXXXXXXXXXXXXXXXXXXXXX'); // Tu clave pública
+
+  document.getElementById("checkout-button").addEventListener("click", function () {
+    fetch("/crear-sesion-de-pago") // Lo maneja tu backend
+      .then(res => res.json())
+      .then(data => stripe.redirectToCheckout({ sessionId: data.id }))
+      .catch(error => console.error("Error:", error));
+  });
+</script>
